@@ -1,0 +1,16 @@
+builders:
+  serializable:
+    import: "package:jser/jser.dart"
+    builder_factories: ["serializableBuilder"]
+    build_extensions: {".dart": ["jser.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+
+  deserializable:
+    import: "package:jser/jser.dart"
+    builder_factories: ["deserializableBuilder"]
+    build_extensions: {".dart": ["jser.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
